@@ -210,7 +210,7 @@ hr {
 .gallery-title-button {
     background-color: #171717;
     color: #f0f0f0;
-    padding: 10px 30px;
+    padding: 12px 30px;
     border-radius: 1.2rem;
     font-size: 1.1rem;
     font-weight: bold;
@@ -227,7 +227,7 @@ hr {
 .add-image-button {
     background-color: #40464d;
     color: #f0f0f0;
-    padding: 15px 25px;
+    padding: 10px 20px;
     border: none;
     border-radius: 1.5rem;
     font-size: 1rem;
@@ -248,8 +248,8 @@ hr {
 }
 
 .arrow-button {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: #2a2c31;
     display: flex;
@@ -316,7 +316,7 @@ hr {
     overflow: auto;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.05);
     aspect-ratio: 1 / 1;
-    width: 170px; /* Reduced from calculated width to make images smaller */
+    width: 150px; /* Reduced from calculated width to make images smaller */
     flex-shrink: 0;
     transition: 0.5s ease;
     /* border: 1px solid white; */
