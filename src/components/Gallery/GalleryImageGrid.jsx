@@ -1,24 +1,36 @@
-import GalleryImageCard from './GalleryImageCard';
-import './Gallery.css'; // Import the shared CSS
-import { CgMenuGridR } from 'react-icons/cg'; // <-- ADD THIS LINE
+import React, { useRef } from 'react';
 
-function GalleryImageGrid({images}) {
+const GalleryImageGrid = ({ images }) => {
+  const wrapperRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollLeft -= 220; // Adjust based on image width + gap
+    }
+  };
+
+  const scrollRight = () => {
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollLeft += 220; // Adjust based on image width + gap
+    }
+  };
 
   return (
     <div className="gallery-image-grid">
-      {/* Grid Icon on the left */}
       <div className="grid-icon-wrapper">
-        <CgMenuGridR size={20} className="header-icon" /> {/* This will now work */}
+        {/* Add SVG or icon here if needed */}
       </div>
-
-      {/* Actual image cards */}
-      <div className="image-cards-wrapper">
-        {images.map(image => (
-          <GalleryImageCard key={image.id} imageUrl={image.url} />
-        ))}
+      <div className="image-slider-mask">
+        <div className="image-cards-wrapper" ref={wrapperRef}>
+          {images.map((image) => (
+            <div key={image.id} className="gallery-image-card">
+              <img src={image.url} alt={`gallery-${image.id}`} className="image-content" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default GalleryImageGrid;
