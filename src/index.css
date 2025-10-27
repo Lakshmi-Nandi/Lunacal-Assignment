@@ -50,7 +50,7 @@ body {
     flex-direction: column;
     gap: 2rem;
     font-size: 1.3rem;
-    width: 5rem;
+    width: 50%
 }
 
 
@@ -155,5 +155,5 @@ hr {
     padding: 1rem 3rem;
     background-color: #363c43;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.679);
-    width: 5rem;
+    width: 50%;
 }
