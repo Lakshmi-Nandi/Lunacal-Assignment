@@ -8,7 +8,7 @@ body {
     display: flex;
     height: 100vh;
     padding: 2rem 2rem;
-    gap: 2rem;
+    gap: 3rem;
     background-color: #25272c;
     /* Added to fix viewport issues */
     box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
     border: 1px solid rgb(95, 185, 220);
     background-color: #545657;
     color: rgb(141, 135, 135);
-    border-radius: 2rem;
+    border-radius: 1rem;
     /* Added */
     flex-shrink: 0; 
 }
@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     /* Set a fixed height */
     height: 50%;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 1rem 3rem;
     background-color: #363c43;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.679);
@@ -327,7 +327,7 @@ hr {
 
 .gallery-image-card {
     background-color: #2a2c31; 
-    border-radius: 2.5rem; /* Your new border-radius */
+    border-radius: 1rem; /* Your new border-radius */
     overflow: hidden; 
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.05); 
     aspect-ratio: 1 / 1; 
