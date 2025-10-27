@@ -61,7 +61,7 @@ body {
     overflow-y: auto;
     padding-right: 1.5rem;
     min-height: 0;
-    font-size: 1rem; /* Matching your .info-container font-size */
+    font-size: 1.3rem; /* Matching your .info-container font-size */
     color: #817f7f; /* Lighter text color for readability */
     line-height: 1.6; /* More spacious line height */
 }
