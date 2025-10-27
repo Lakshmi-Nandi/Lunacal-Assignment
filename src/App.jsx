@@ -99,8 +99,8 @@ function App() {
         </div>
         <hr />
         <div className="gallery-container">
-          <GalleryHeader onAddImage={handleAddImage} />
-          <GalleryImageGrid images={images} />
+          <GalleryHeader onAddImage={handleAddImage} onScrollLeft={() => {}} onScrollRight={() => {}} />
+          <GalleryImageGrid images={images} onScrollLeft={scrollLeft => scrollLeft()} onScrollRight={scrollRight => scrollRight()} />
         </div>
         <hr />
       </div>

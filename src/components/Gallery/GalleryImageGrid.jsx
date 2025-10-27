@@ -1,19 +1,23 @@
 import React, { useRef } from 'react';
 
-const GalleryImageGrid = ({ images }) => {
+const GalleryImageGrid = ({ images, onScrollLeft, onScrollRight }) => {
   const wrapperRef = useRef(null);
 
   const scrollLeft = () => {
     if (wrapperRef.current) {
-      wrapperRef.current.scrollLeft -= 220; // Adjust based on image width + gap
+      wrapperRef.current.scrollLeft -= 170; // Incremental scroll left (image width 150px + gap 20px approx)
     }
   };
 
   const scrollRight = () => {
     if (wrapperRef.current) {
-      wrapperRef.current.scrollLeft += 220; // Adjust based on image width + gap
+      wrapperRef.current.scrollLeft += 170; // Incremental scroll right
     }
   };
+
+  // Pass the scroll functions to the parent via props
+  if (onScrollLeft) onScrollLeft(scrollLeft);
+  if (onScrollRight) onScrollRight(scrollRight);
 
   return (
     <div className="gallery-image-grid">

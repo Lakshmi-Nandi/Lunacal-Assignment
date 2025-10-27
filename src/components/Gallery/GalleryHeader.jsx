@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GalleryHeader = ({ onAddImage }) => {
+const GalleryHeader = ({ onAddImage, onScrollLeft, onScrollRight }) => {
   return (
     <div className="gallery-header">
       <div className="header-left">
@@ -14,8 +14,8 @@ const GalleryHeader = ({ onAddImage }) => {
           + ADD IMAGE
         </button>
         <div className="nav-arrows">
-          <button className="arrow-button">&lt;</button>
-          <button className="arrow-button">&gt;</button>
+          <button className="arrow-button" onClick={onScrollLeft}>&lt;</button>
+          <button className="arrow-button" onClick={onScrollRight}>&gt;</button>
         </div>
       </div>
     </div>

@@ -298,13 +298,20 @@ hr {
 
 .image-slider-mask {
     flex-grow: 1;
-    overflow: hidden;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.image-slider-mask::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
 }
 
 .image-cards-wrapper {
     display: flex;
     flex-wrap: nowrap;
-    transition: transform 0.5s ease-in-out;
+    /* transition: transform 0.5s ease-in-out; */
     gap: 1.2rem; /* Reduced gap for tighter layout */
     padding: 20px;
     align-items: flex-start;
