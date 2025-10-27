@@ -7,8 +7,8 @@ body {
 .main-container {
     display: flex;
     height: 100vh;
-    padding: 4rem 4rem;
-    gap: 3rem;
+    padding: 2rem 2rem;
+    gap: 2rem;
     background-color: #25272c;
     /* Added to fix viewport issues */
     box-sizing: border-box;
