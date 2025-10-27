@@ -62,9 +62,8 @@ body {
     padding-right: 1.5rem;
     min-height: 0;
     font-size: 1.1rem; /* Matching your .info-container font-size */
-    line-height: 0.5px;
     color: #817f7f; /* Lighter text color for readability */
-    line-height: 1.6; /* More spacious line height */
+    line-height: 1; /* More spacious line height */
 }
 
 /* --- Custom Scrollbar for .info --- */
