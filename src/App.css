@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.main-container {
+  display: flex;
+  height: 100%;
+}
+
+.left-box {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid black;
+
+}

@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* Gallery Container - Overall box styles */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    /* Removed fixed height if parent right-box has flex-grow */
+    border-radius: 2rem;
+    padding: 1rem 3rem 2rem 3rem; /* Adjusted padding to match image */
+    background-color: #363c43;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.679);
+    gap: 1.5rem; /* Space between header and image grid */
+    color: #a0a0a0; /* Default text color for gallery */
+    position: relative; /* For positioning icons relative to this container */
+}
+
+
+/* Gallery Header */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Question mark icon */
+.icon-wrapper {
+    width: 32px; /* Fixed size for the icon container */
+    height: 32px;
+    border-radius: 50%; /* Makes it circular */
+    background-color: #2a2c31; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.05); /* Soft neomorphic shadow */
+    cursor: pointer;
+    color: #b0b0b0; /* Icon color */
+}
+
+.gallery-title-button {
+    background-color: #171717; /* Dark background */
+    color: #f0f0f0; /* White text */
+    padding: 15px 35px;
+    border-radius: 1.5rem; /* Highly rounded */
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5); /* Neomorphic shadow */
+    cursor: default; /* Not a clickable button like the nav-bar */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.add-image-button {
+    background-color: #40464d; /* Dark background */
+    color: #f0f0f0; /* White text */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.39); /* Neomorphic shadow */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-image-button:hover {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.05); /* Inset shadow on hover */
+    color: #a0a0a0;
+}
+
+.nav-arrows {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.arrow-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #2a2c31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    color: #f0f0f0;
+    /* --- THIS IS THE SHADOW --- */
+    box-shadow: 2px 2px 10px rgba(0, 247, 247, 0.121), 
+        -2px -2px 10px rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.arrow-button:hover {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.05); /* Inset shadow on hover */
+    color: #a0a0a0;
+}
+
+
+/* Image Grid Section */
+.gallery-image-grid {
+    display: flex; /* Use flex to position the grid icon and image cards */
+    gap: 1rem; /* Space between grid icon and images */
+    align-items: flex-start; /* Align grid icon to the top of the cards */
+}
+
+.grid-icon-wrapper {
+    width: 32px; /* Match the question mark icon size */
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #b0b0b0; /* Icon color */
+    margin-top: 0.5rem; /* Adjust alignment with image cards if needed */
+}
+
+.image-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, equal width */
+    gap: 1.5rem; /* Space between image cards */
+    flex-grow: 1; /* Allows image grid to take up remaining space */
+}
+
+/* Individual Image Card */
+.gallery-image-card {
+    background-color: #2a2c31; /* Dark background for the card */
+    border-radius: 2.5rem; /* Rounded corners for the card */
+    overflow: hidden; /* Ensures image/placeholder stays within rounded corners */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.05); /* Prominent neomorphic shadow */
+    transition: 0.5s ease;
+    border: 1px solid white;
+    
+    
+}
+
+.gallery-image-card:hover {
+    cursor: pointer;
+    transform: scale(1.1) rotateZ(-1.5deg) translateX(10px); /* Makes it pop out slightly */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6), 
+                -4px -4px 15px rgba(255, 255, 255, 0.05); 
+}
+
+.image-placeholder {
+    width: 100%;
+    /* aspect-ratio: 1 / 1; Makes the placeholder square */
+    background-color: #555; /* A placeholder gray */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #bbb;
+    /* If you were using img tag:
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    */
+}
