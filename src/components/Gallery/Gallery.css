@@ -1,26 +1,26 @@
-/* --- Gallery Styles --- */
+@import "tailwindcss";
 
+/* Gallery Container - Overall box styles */
 .gallery-container {
     display: flex;
     flex-direction: column;
+    /* Removed fixed height if parent right-box has flex-grow */
     border-radius: 2rem;
-    padding: 1rem 3rem 2rem 3rem; 
+    padding: 1rem 3rem 2rem 3rem; /* Adjusted padding to match image */
     background-color: #363c43;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.679);
-    gap: 1.5rem; 
-    color: #a0a0a0; 
-    position: relative;
-    flex-grow: 1; 
-    min-height: 0;
-    overflow: hidden; 
+    gap: 1.5rem; /* Space between header and image grid */
+    color: #a0a0a0; /* Default text color for gallery */
+    position: relative; /* For positioning icons relative to this container */
 }
 
+
+/* Gallery Header */
 .gallery-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex-shrink: 0; 
 }
 
 .header-left {
@@ -29,33 +29,29 @@
     gap: 1rem;
 }
 
+/* Question mark icon */
 .icon-wrapper {
-    width: 32px; 
+    width: 32px; /* Fixed size for the icon container */
     height: 32px;
-    border-radius: 50%; 
-    background-color: #2a2c31; 
+    border-radius: 50%; /* Makes it circular */
+    background-color: #2a2c31; /* Dark background */
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.05); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.05); /* Soft neomorphic shadow */
     cursor: pointer;
-    color: #b0b0b0; 
-}
-
-.icon-wrapper svg {
-    width: 20px;
-    height: 20px;
+    color: #b0b0b0; /* Icon color */
 }
 
 .gallery-title-button {
-    background-color: #171717; 
-    color: #f0f0f0; 
+    background-color: #171717; /* Dark background */
+    color: #f0f0f0; /* White text */
     padding: 15px 35px;
-    border-radius: 1.5rem; 
+    border-radius: 1.5rem; /* Highly rounded */
     font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5); 
-    cursor: default; 
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5); /* Neomorphic shadow */
+    cursor: default; /* Not a clickable button like the nav-bar */
 }
 
 .header-right {
@@ -65,20 +61,20 @@
 }
 
 .add-image-button {
-    background-color: #40464d; 
-    color: #f0f0f0; 
+    background-color: #40464d; /* Dark background */
+    color: #f0f0f0; /* White text */
     padding: 15px 25px;
     border: none;
     border-radius: 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.39); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.39); /* Neomorphic shadow */
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .add-image-button:hover {
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.05); 
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.05); /* Inset shadow on hover */
     color: #a0a0a0;
 }
 
@@ -98,93 +94,76 @@
     border: none;
     cursor: pointer;
     color: #f0f0f0;
+    /* --- THIS IS THE SHADOW --- */
     box-shadow: 2px 2px 10px rgba(0, 247, 247, 0.121), 
         -2px -2px 10px rgba(255, 255, 255, 0.05);
     transition: all 0.2s ease;
 }
 
-.arrow-button svg {
-    width: 16px;
-    height: 16px;
-}
-
 .arrow-button:hover {
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.05); 
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.05); /* Inset shadow on hover */
     color: #a0a0a0;
 }
 
+
+/* Image Grid Section */
 .gallery-image-grid {
-    display: flex; 
-    gap: 1rem; 
-    align-items: flex-start; 
-    flex-grow: 1;
-    min-height: 0; 
+    display: flex; /* Use flex to position the grid icon and image cards */
+    gap: 1rem; /* Space between grid icon and images */
+    align-items: flex-start; /* Align grid icon to the top of the cards */
 }
 
 .grid-icon-wrapper {
-    width: 32px; 
+    width: 32px; /* Match the question mark icon size */
     height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #b0b0b0; 
-    margin-top: 0.5rem; 
-    flex-shrink: 0; 
-}
-
-.grid-icon-wrapper svg {
-    width: 20px;
-    height: 20px;
-}
-
-.image-slider-mask {
-    flex-grow: 1; 
-    overflow: hidden; 
-    /* --- THIS IS THE FIX --- */
-    height: 100%;
-    min-width: 0; /* Helps flexbox calculate width correctly */
+    color: #b0b0b0; /* Icon color */
+    margin-top: 0.5rem; /* Adjust alignment with image cards if needed */
 }
 
 .image-cards-wrapper {
-    display: flex; 
-    flex-wrap: nowrap; 
-    transition: transform 0.5s ease-in-out; 
-    gap: 1.5rem; 
-    align-items: flex-start; 
-    height: 100%; /* Make wrapper fill the mask height */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, equal width */
+    gap: 1.5rem; /* Space between image cards */
+    flex-grow: 1; /* Allows image grid to take up remaining space */
 }
 
+/* Individual Image Card */
 .gallery-image-card {
-    background-color: #2a2c31; 
-    border-radius: 2.5rem; 
-    overflow: hidden; 
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.05); 
-    aspect-ratio: 1 / 1; 
-    width: calc((100% - 3rem) / 3);
-    flex-shrink: 0; 
+    background-color: #2a2c31; /* Dark background for the card */
+    border-radius: 2.5rem; /* Rounded corners for the card */
+    overflow: hidden; /* Ensures image/placeholder stays within rounded corners */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.05); /* Prominent neomorphic shadow */
     transition: 0.5s ease;
     border: 1px solid white;
-    /* --- FIX FOR SQUISHING --- */
-    height: auto; /* Let aspect-ratio control height */
-    max-height: 100%; /* Don't grow taller than the wrapper */
+    
+    
 }
 
 .gallery-image-card:hover {
     cursor: pointer;
-    transform: scale(1.1) rotateZ(-1.5deg) translateX(10px); 
+    transform: scale(1.1) rotateZ(-1.5deg) translateX(10px); /* Makes it pop out slightly */
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6), 
                 -4px -4px 15px rgba(255, 255, 255, 0.05); 
 }
 
-.gallery-image-card:hover .image-content {
-    filter: grayscale(0%);
-}
-
-.image-content {
+.image-placeholder {
     width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block; 
-    filter: grayscale(100%); 
-    transition: filter 0.5s ease; 
+    /* aspect-ratio: 1 / 1; Makes the placeholder square */
+    background-color: #555; /* A placeholder gray */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #bbb;
+    /* If you were using img tag:
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    */
 }
